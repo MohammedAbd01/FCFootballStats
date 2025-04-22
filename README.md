@@ -1,109 +1,127 @@
-# FCStats - Football Team Statistics Platform
+# FCFootballStats - Football Team Statistics Platform
 
-A modern, responsive web application for tracking football team statistics, player performance, and match details.
+A modern, responsive web application for tracking football team statistics, built with PHP 8.x and Bootstrap 5.
 
 ## Features
 
-- 📊 Interactive dashboard with key statistics
-- 👥 Detailed player profiles with performance history
-- ⚽ Match tracking and statistics
-- 🔒 Admin panel for managing players and matches
-- 📱 Fully responsive design
-- 🎨 Modern UI with smooth animations
-- 🔍 Search functionality
-- 📈 Performance analytics
+- 🔐 Secure authentication system for admins and players
+- 📊 Comprehensive player statistics tracking
+- 🎯 Match management and results recording
+- 📱 Responsive design for all devices
+- 🎨 Modern and clean user interface
+- 🔍 Advanced search and filtering capabilities
+- 📅 Calendar view for matches
+- 📈 Interactive dashboards
+- 📤 Data export functionality
 
-## Technologies Used
+## Technology Stack
 
-- React.js
-- Tailwind CSS
-- Framer Motion
-- Node.js
-- Express.js
-- MongoDB
+- **Frontend:**
+  - Bootstrap 5
+  - jQuery
+  - DataTables
+  - FullCalendar
+  - Google Fonts (Poppins)
 
-## Prerequisites
+- **Backend:**
+  - PHP 8.x
+  - MySQL
+  - MVC Architecture
 
-- Node.js (v14 or higher)
-- npm or yarn
-- MongoDB
+## Project Structure
+
+```
+FCFootballStats/
+├── config/
+│   └── config.php
+├── controllers/
+│   ├── AdminController.php
+│   ├── AuthController.php
+│   ├── DashboardController.php
+│   ├── MatchController.php
+│   └── PlayerController.php
+├── core/
+│   ├── Database.php
+│   └── Router.php
+├── models/
+│   ├── MatchModel.php
+│   ├── PlayerModel.php
+│   └── UserModel.php
+├── public/
+│   ├── css/
+│   │   └── styles.css
+│   ├── js/
+│   │   └── scripts.js
+│   └── uploads/
+├── views/
+│   ├── admin/
+│   ├── auth/
+│   ├── dashboard/
+│   ├── matches/
+│   └── players/
+└── index.php
+```
 
 ## Installation
 
 1. Clone the repository:
 ```bash
 git clone https://github.com/yourusername/FCFootballStats.git
-cd FCFootballStats
 ```
 
-2. Install dependencies:
+2. Set up your web server (Apache/Nginx) to point to the project directory
+
+3. Create a MySQL database and import the schema:
 ```bash
-npm install
+mysql -u your_username -p your_database < setup.sql
 ```
 
-3. Create a `.env` file in the root directory and add your environment variables:
-```env
-REACT_APP_API_URL=http://localhost:5000
-MONGODB_URI=your_mongodb_connection_string
-```
+4. Configure your database connection in `config/config.php`
 
-4. Start the development server:
-```bash
-npm start
-```
+5. Set up the initial admin user in the database
 
-The application will be available at `http://localhost:3000`.
+## Requirements
 
-## Project Structure
+- PHP 8.x
+- MySQL 5.7+
+- Apache/Nginx web server
+- Composer (for dependency management)
 
-```
-FCFootballStats/
-├── src/
-│   ├── components/
-│   │   └── Navbar.js
-│   │   ├── pages/
-│   │   │   ├── Dashboard.js
-│   │   │   ├── PlayerProfiles.js
-│   │   │   ├── MatchTracking.js
-│   │   │   └── AdminPanel.js
-│   │   ├── App.js
-│   │   ├── index.js
-│   │   └── index.css
-│   ├── public/
-│   │   └── index.html
-│   ├── package.json
-│   └── README.md
-```
+## Security Features
 
-## API Endpoints
-
-### Players
-- `GET /api/players` - Get all players
-- `POST /api/players` - Create a new player
-- `PUT /api/players/:id` - Update a player
-- `DELETE /api/players/:id` - Delete a player
-
-### Matches
-- `GET /api/matches` - Get all matches
-- `POST /api/matches` - Create a new match
-- `PUT /api/matches/:id` - Update a match
-- `DELETE /api/matches/:id` - Delete a match
+- Password hashing using `password_hash()`
+- Prepared statements for all database queries
+- Input validation and sanitization
+- Session management
+- Role-based access control
 
 ## Contributing
 
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a new Pull Request
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Acknowledgments
+## Support
 
-- [React](https://reactjs.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [Heroicons](https://heroicons.com/) 
+For support, please open an issue in the GitHub repository or contact the development team.
+
+## File Structure Details
+
+| File | Description |
+|------|-------------|
+| `index.php` | Main entry point |
+| `config/config.php` | Configuration settings |
+| `core/Router.php` | URL routing system |
+| `core/Database.php` | Database connection handler |
+| `controllers/*.php` | Controller classes |
+| `models/*.php` | Model classes |
+| `views/*.php` | View templates |
+| `public/css/styles.css` | Custom styles |
+| `public/js/scripts.js` | Custom JavaScript |
+| `setup.sql` | Database schema | 
